@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>try{var t=localStorage.getItem('ai-ch-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AI Knowledge Base</title>
 <meta name="description" content="A seven-chapter guide to how AI got here and how to use it well in education: a timeline, chapters, sections, explainers, a glossary and cited sources.">
@@ -375,12 +376,12 @@
   <div class="ctl"><button type="button" id="ex">Expand</button><button type="button" id="co">Collapse</button></div></div>
 
 <div id="chapters">
-<details class="ch" id="c1" style="--c:var(--c1)" open><summary><span class="num">01</span><span><span class="era">1950s–60s</span><span class="ttl">Can machines think?</span></span><span class="pm"></span></summary>
+<details class="ch" id="c1" style="--c:var(--c1)"><summary><span class="num">01</span><span><span class="era">1950s–60s</span><span class="ttl">Can machines think?</span></span><span class="pm"></span></summary>
  <div class="cols"><div></div>
   <div><h4>Sections</h4><ul><li>Turing’s question (1950)</li><li>Rule-based AI: if-then logic</li><li>The perceptron (1957): inputs × weights vs. a threshold</li><li>Hype and Cold War funding</li></ul></div>
   <div><h4>Explainers</h4><div class="chips"><span class="chip">Weight</span><span class="chip">Threshold</span><span class="chip">Artificial vs. biological neuron</span><span class="chip">Narrow, general, super AI</span></div><p class="status">Written — 4 sections · 4 explainers · 12 verified sources</p><a class="open" href="chapters/01-can-machines-think.html">Read Chapter 1</a></div></div></details>
 
-<details class="ch" id="c2" style="--c:var(--c2)" open><summary><span class="num">02</span><span><span class="era">1969–1990s</span><span class="ttl">Winters and revival</span></span><span class="pm"></span></summary>
+<details class="ch" id="c2" style="--c:var(--c2)"><summary><span class="num">02</span><span><span class="era">1969–1990s</span><span class="ttl">Winters and revival</span></span><span class="pm"></span></summary>
  <div class="cols"><div></div>
   <div><h4>Sections</h4><ul><li>The XOR problem and the first AI winter (1969–1980)</li><li>Backpropagation revived (1986)</li><li>LeNet reads the mail: convolutional networks (1989–1998)</li><li>The second winter (late 1980s–1990s)</li><li>Deep Blue vs. Kasparov (1997): rules vs. learning</li></ul></div>
   <div><h4>Explainers</h4><div class="chips"><span class="chip">Backpropagation</span><span class="chip">Supervised learning</span><span class="chip">Convolutional network</span><span class="chip">AI winter</span><span class="chip">Rules vs. learning</span></div><p class="status">Written — 5 sections · 5 explainers · 14 sources</p><a class="open" href="chapters/02-winters-and-revival.html">Read Chapter 2</a></div></div></details>
@@ -439,8 +440,8 @@
   var root=document.documentElement;
   function eff(){var t=root.getAttribute('data-theme'); if(t) return t; return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
   function paint(){var t=eff(); $('bLight').setAttribute('aria-pressed',t==='light'); $('bDark').setAttribute('aria-pressed',t==='dark');}
-  function setTheme(t){root.setAttribute('data-theme',t); try{localStorage.setItem('ai-syllabus-theme',t);}catch(e){} paint();}
-  try{var s=localStorage.getItem('ai-syllabus-theme'); if(s==='light'||s==='dark') root.setAttribute('data-theme',s);}catch(e){}
+  function setTheme(t){root.setAttribute('data-theme',t); try{localStorage.setItem('ai-ch-theme',t);}catch(e){} paint();}
+  try{var s=localStorage.getItem('ai-ch-theme'); if(s==='light'||s==='dark') root.setAttribute('data-theme',s);}catch(e){}
   $('bLight').onclick=function(){setTheme('light');}; $('bDark').onclick=function(){setTheme('dark');}; paint();
 
   /* glossary tabs + menu */
