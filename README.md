@@ -50,8 +50,5 @@ Chapters 6 and 7 are dated snapshots (26 October 2026). Prices, rankings, rules 
 
 ## Author
 
-[[YOUR NAME]]
+Mo Saladin
 
-## Licence
-
-[[Add the licence you choose, or delete this section]]
