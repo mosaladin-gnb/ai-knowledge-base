@@ -2,7 +2,7 @@
 
 A seven-chapter guide to how AI got here and how to use it well in education. It follows the story from the first question ("Can machines think?") to today's chatbots, and ends with practical guidance for the classroom.
 
-**Read it online:** [[LIVE URL, for example https://YOUR-USERNAME.github.io/ai-knowledge-base/]]
+**Read it online:** [[https://mosaladin-gnb.github.io/ai-knowledge-base/]]
 
 ## What is inside
 
