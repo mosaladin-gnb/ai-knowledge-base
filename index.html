@@ -303,7 +303,24 @@
     body{background:#fff; color:#000; font-size:11pt}
     details.ch,details.gt,.trunkwrap{break-inside:avoid}
   }
-</style>
+
+      /* Simplified ideas link row */
+      :root{--cg:#4a4a4a}
+      @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cg:#b4b4b4}}
+      :root[data-theme="dark"]{--cg:#b4b4b4}
+      a.ch.lk{--c:var(--cg); display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:center; position:relative; padding:1.15rem 0 1.15rem calc(1rem + 5px); border-bottom:1px solid var(--line); color:var(--fg); text-decoration:none}
+      a.ch.lk::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--c)}
+      a.ch.lk .num{position:relative; display:inline-block}
+      a.ch.lk .ghost{visibility:hidden}
+      a.ch.lk .lamp{position:absolute; left:0; top:50%; height:.9em; width:.9em; transform:translateY(-50%); color:var(--cg)}
+      a.ch.lk .go{width:1.9rem; height:1.9rem; border:1px solid var(--line); position:relative; flex-shrink:0}
+      a.ch.lk .go::before{content:""; position:absolute; left:50%; top:50%; width:.8rem; height:1px; background:var(--fg); transform:translate(-50%,-50%)}
+      a.ch.lk .go::after{content:""; position:absolute; left:50%; top:50%; width:.42rem; height:.42rem; border-top:1px solid var(--fg); border-right:1px solid var(--fg); transform:translate(-.1rem,-50%) rotate(45deg)}
+      a.ch.lk:hover .go,a.ch.lk:focus-visible .go{background:var(--fg)}
+      a.ch.lk:hover .go::before{background:var(--bg)} a.ch.lk:hover .go::after{border-color:var(--bg)}
+      a.ch.lk:focus-visible{outline:2px solid var(--fg); outline-offset:2px}
+      @media (max-width:720px){a.ch.lk{min-height:48px}}
+    </style>
 </head>
 <body>
 <div id="top"></div>
@@ -410,7 +427,8 @@
  <div class="cols"><div></div>
   <div><h4>Sections</h4><ul><li>Prompting and iteration</li><li>AI in the classroom: from the ban to a plan</li><li>What the learning evidence says</li><li>Assessment redesign, and why detectors fail</li><li>Risks: bias, privacy, prompt injection and over-attachment</li><li>Outlook: another winter, or an eternal spring?</li></ul></div>
   <div><h4>Explainers</h4><div class="chips"><span class="chip">Prompt</span><span class="chip">Prompt injection</span><span class="chip">Bias</span><span class="chip">AI detection</span><span class="chip">Student data privacy</span><span class="chip">AGI</span></div><p class="status">Written — 6 sections · 6 explainers · 14 sources · dated Oct. 26, 2026 · hands-on demos in every section</p><a class="open" href="chapters/07-ai-in-education.html">Read Chapter 7</a></div></div></details>
-</div>
+<a class="ch lk" id="cideas" href="simplified-ideas.html"><span class="num lampnum"><span class="ghost" aria-hidden="true">07</span><svg class="lamp" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M24 48C24 42 16 38 16 28a16 16 0 0 1 32 0c0 10-8 14-8 20z"/><path d="M25 54h14M28 60h8"/><path d="M32 20v22"/><path d="M32 22c-5-2-8 2-6 5-4 1-4 7 1 8M32 22c5-2 8 2 6 5 4 1 4 7-1 8"/><path d="M32 2v5M11 9l3.5 3.5M53 9l-3.5 3.5M2 28h5M62 28h-5M9 47l3.5-3M55 47l-3.5-3"/></svg></span><span><span class="era">In pictures</span><span class="ttl">Simplified ideas</span></span><span class="go" aria-hidden="true"></span></a>
+    </div>
 
 <details class="gloss" id="glossary">
   <summary><h2 class="big">Glossary</h2><span class="gmeta"><span id="gcount">0</span> terms</span><span class="pm"></span></summary>
@@ -481,6 +499,7 @@
       Array.prototype.forEach.call(items,function(i){var h=!query||titleHit||i.textContent.toLowerCase().indexOf(query)>-1; i.hidden=!h; if(h) any=true;});
       var show=!query||titleHit||any; r.hidden=!show; if(show) ch++; if(query&&show) r.open=true;
     });
+    var lk=document.getElementById('cideas'); if(lk) lk.hidden=!!query;
     drawTerms(); if(query&&termsFor().length) $('glossary').open=true;
     var nt=termsFor().length; $('resultline').innerHTML=query?(ch+' chapter'+(ch===1?'':'s')+' · '+nt+' glossary term'+(nt===1?'':'s')+' match “'+esc(query)+'”'+(ch?'<a href="#chapters">Chapters ↓</a>':'')+(nt?'<a href="#glossary">Glossary ↓</a>':'')):'';
   }
